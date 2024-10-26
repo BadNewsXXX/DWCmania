@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+        <header class="header">
+            <div class="container">
+                <div class="topmenu">
+                    <nav class="navigation">
+                        <div class="left-menu">
+                            <div class="logo">
+                                <a href="{% url 'home' %}">
+                                    <img src="{% static 'myapp/DWC-4.png' %}" alt="DWC Logo">
+                                </a>
+                            </div>
+                            <button class="menu-toggle" id="menuToggle">
+                                &#9776; <!-- Символ гамбургер-меню -->
+                            </button>
+                                <ul class="top-list" id="navMenu">
+                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="#features">Features</a></li>
+                                    <li><a href="#Product">Product</a></li>
+                                    <li><a href="#pricing">Pricing</a></li>
+                                </ul>    
+                            </div>
+                            <div class="right-menu">
+                                <ul class="top-list">
+                                    <li><a href="{% url 'about' %}">About Us</a></li>
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                </ul>
+                            </div>
+                </div>
+                    </nav>
+            </div>
+            </div>
+        </header>
+    <main class="main-content">
+        <div class="container">
+            <div class="page-start">
+                <section class="introduction">
+                    <h2><span class="DWC">DWC</span> Project presents!</h2>
+                    <h2>WWE/NXT/AEW - all wrestling sport competitions for any corner of the WORLD!</h2>
+                    <p>What is <span class="DWC">DWC</span>?</p>
+                </section>
+                <section class="button">
+                    <button id="scrollButton" class="scroll-button">Learn More</button>
+                </section>
+            </div>
+            <section class="features" id="features">
+                <div class="text-content">
+                    <h2>Features</h2>
+                    <span class="title">High quality<span class="sticker">
+                        <img src="{% static 'myapp/flash.gif' %}" alt="Camera Sticker">
+                    </span></span>
+                    <span class="opisanie"><i>Enjoy your favorite wrestling shows in stunning 2K+ quality! Experience crystal-clear video and audio for an immersive viewing experience, whether you're at home, at work, or on the go!</i></span>
+                    <span class="title">Speed<span class="sticker">
+                        <img src="{% static 'myapp/electricity.gif' %}" alt="Lightning Sticker">
+                    </span></span>
+                    <span class="opisanie"><i>Be the first to watch the latest shows! Receive fast notifications and instant postings—so you’ll never miss a moment. Enjoy your favorite content at your convenience, whenever you want!</i></span>
+                    <span class="title">Convenience<span class="sticker">
+                        <img src="{% static 'myapp/plane.gif' %}" alt="Lightning Sticker">
+                    </span></span>
+                    <span class="opisanie"><i>Missed your show on TV? Can't find the right one? We’ve got you covered! With our service, you don't have to worry about searching. Live your life and enjoy your favorite content from anywhere in the world, whenever you want!</i></span>
+
+                </div>
+                <video autoplay muted loop id="video">
+                    <source src="{% static 'videos/video arbi(2).mp4' %}" type="video/mp4">
+                </video>
+            </section>
+            <section class="Offers" id="Product">
+                <div class="text-content">
+                    <h2 class="DWC">We offer:</h2>
+                <div class="OffersAll">
+                    <div class="offer1">
+                        <span class="title">Previous/Deleted shows of Wrestling content</span>
+                        <span class="opisanie">Relive the iconic moments of WWE history! With our service, you can enjoy the shows you missed, no matter where you are in the world. Experience uninterrupted viewing with no ads—just pure wrestling action at your fingertips!</span>
+                        <img src="{% static 'myapp/offer1.png' %}" alt="offerimg1">
+                    </div>
+                    <div class="offer2">
+                        <span class="title">Wrestling News</span>
+                        <span class="opisanie">Stay in the loop with everything about your favorite WWE, NXT, and AEW Superstars! Get the latest updates on upcoming shows, sports news, and highlights. Be part of the WWE Universe and never miss a beat!</span>
+                        <img src="{% static 'myapp/offer2.png' %}" alt="offerimg2">
+                    </div>
+                    <div class="offer3">
+                        <span class="title">Exclusive interviews with your favorite superstars</span>
+                        <span class="opisanie">Hear directly from the Superstars you admire! Enjoy exclusive one-on-one interviews where your favorite athletes share their lives and experiences. From behind-the-scenes insights to personal stories, everything is always with you. JOIN US!</span>
+                        <img src="{% static 'myapp/offer3.png' %}" alt="offerimg3">
+                    </div> 
+                </div>
+                <div class="ending">
+                    <span class="white">and MORE!</span>
+                    <section class="button2">
+                        <button id="scrollButtonPrice" class="scroll-button">JOIN US!</button>
+                    </section>
+                </div>
+                </section>
+                </div>
+                <div class="pricing" id="pricing">
+                    <section class="pricing-section">
+                        <h2 class="pricing-title">Choose Your Plan</h2>
+                        <div class="pricing-container">
+                            <!-- Monthly Plan -->
+                            <div class="pricing-plan">
+                                <h3 class="plan-title">1 Month</h3>
+                                <div class="original-price">
+                                    <del id="invis">$18</del> <span class="discount" id="invis">17% OFF</span>
+                                </div>
+                                <div class="plan-price">
+                                    <span class="currency"></span>$  6</span>
+                                </div>
+                                <ul class="plan-features">
+                                    <li>WWE/AEW/NXT shows</li>
+                                    <li>News</li>
+                                    <li>and MORE!</li>
+                                </ul>
+                                <a href="#" class="plan-button">Subscribe Now</a>
+                            </div>
+                            <!-- 3-Month Plan -->
+                            <div class="pricing-plan">
+                                <h3 class="plan-title">3 Months</h3>
+                                <div class="original-price">
+                                    <del>$18</del> <span class="discount">17% OFF</span>
+                                </div>
+                                <div class="plan-price">
+                                    <span class="currency"></span>$  15</span>   
+                                </div>
+                                <ul class="plan-features">
+                                    <li>WWE/AEW/NXT shows</li>
+                                    <li>Exclusive interviews</li>
+                                    <li>and MORE!</li>
+                                </ul>
+                                <a href="#" class="plan-button">Subscribe Now</a>
+                            </div>
+                        </div>
+                    </section>  
+                </div> 
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Левый блок с информацией -->
+            <div class="footer-left">
+                <p>© Copyright 2024 DWC LTD. All rights reserved.<br>
+                    <span>111 Kalinovskogo street, 220086, Minsk, Minsk region, Belarus</span></p>
+            </div>
+            <!-- Правый блок с платёжными системами -->
+            <div class="footer-right">
+                    <a href="{% url 'terms' %}" class="footer-link" target="_blank">Terms of Use</a>
+                    <a href="{% url 'privacy' %}" class="footer-link" target="_blank">Privacy Policy</a>
+                    <a href="{% url 'contact' %}" class="footer-link">Help</a>
+                <img src="{% static 'myapp/Payments.png' %}" alt="Payments" class="payment-logo">
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Функция, чтобы запустить перелистывание логотипа
+        function flipLogo() {
+            const logo = document.querySelector('.logo img');
+            logo.classList.add('flip');
+    
+            // Через 5 секунд останавливаем перелистывание
+            setTimeout(() => {
+                logo.classList.remove('flip');
+            }, 5000); // 5000 миллисекунд = 5 секунд
+        }
+    
+        // Запускаем перелистывание каждые 10 секунд
+        setInterval(flipLogo, 10000);
+    </script>
+    <script>
+        // Получаем cookie
+function getCookie(name) {
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+// Показываем баннер только если пользователь еще не сделал выбор
+if (getCookie('cookieConsent') !== 'accepted' && getCookie('cookieConsent') !== 'declined') {
+    document.write(`
+        <div id="cookie-banner" style="background-color: #010407; padding: 10px; position: fixed; bottom: 0; width: 23%; text-align: center; color: #010407;">
+            <span style="color: #fff; font-size: 22px; font-weight: bold;">Can we store cookies?</span>
+            <p style="color: #fff; ">This website uses cookies to ensure you get the best experience, to analyze traffic and remember your website choices. You can change your preferences at any time in the privacy settings. You can read more about our privacy practices in our privacy policy and our cookie policy. <br> <br>You can familiarize with our Privacy Policy: <a href="{% url 'privacy' %}" style= color:#be0505>Learn more</a>.</p> 
+            <button id="accept-button" onclick="acceptCookies()">Accept</button>
+            <button id="decline-button" onclick="declineCookies()">Decline</button></p>
+        </div>
+    `);
+}
+
+// Устанавливаем cookie
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Принимаем cookie
+function acceptCookies() {
+    setCookie('cookieConsent', 'accepted', 365); // Устанавливаем cookie на 1 год
+    document.getElementById('cookie-banner').style.display = 'none'; // Скрываем баннер
+}
+
+// Отклоняем cookie
+function declineCookies() {
+    setCookie('cookieConsent', 'declined', 365); // Сохраняем выбор пользователя
+    document.getElementById('cookie-banner').style.display = 'none'; // Скрываем баннер
+}
+    </script> 
+    <script>
+        
+function closeMenuOnMobile() {
+    if (window.matchMedia("(max-width: 1170px)").matches) { // Замените 1024px на ваше значение
+        document.querySelectorAll('#navMenu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById("navMenu").style.display = "none";
+            });
+        });
+    }
+}
+
+// Вызов функции при загрузке страницы
+closeMenuOnMobile();
+    </script>  
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Contact Us</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="topmenu">
+                <nav class="navigation">
+                    <div class="left-menu">
+                        <div class="logo">
+                            <a href="{% url 'home' %}">
+                                <img src="{% static 'myapp/DWC-4.png' %}" alt="DWC Logo">
+                            </a>
+                        </div>
+                        <button class="menu-toggle" id="menuToggle">
+                            &#9776; <!-- Символ гамбургер-меню -->
+                        </button>
+                        <ul class="top-list" id="navMenu">
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="/#features">Features</a></li>
+                            <li><a href="/#Product">Product</a></li>
+                            <li><a href="/#pricing">Pricing</a></li>
+                        </ul>    
+                    </div>
+                    <div class="right-menu">
+                        <ul class="top-list">
+                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </div>  
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="main-content-about">
+            <div class="contact">
+                <h1 class=>Contacts</h1>
+            <div class="text-about">
+            <p>Business mail:<a href="mailto:mystery@badnewsxo.com">   mystery@badnewsxo.com</a>
+            </p>
+            <p>Support mail:<a href="mailto:helpdeskdwcteam@gmail.com">   helpdeskdwcteam@gmail.com</a>
+            </p>
+            <p>Support telegram: <a href="https://t.me/actuallydone" target="_blank">https://t.me/actuallydone</a>
+            </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Левый блок с информацией -->
+            <div class="footer-left">
+                <p>© Copyright 2024 DWC LTD. All rights reserved.<br>
+                    <span>111 Kalinovskogo street, 220086, Minsk, Minsk region, Belarus</span></p>
+            </div>
+
+            <!-- Правый блок с платёжными системами -->
+            <div class="footer-right">
+                    <a href="{% url 'terms' %}" class="footer-link" target="_blank">Terms of Use</a>
+                    <a href="{% url 'privacy' %}" class="footer-link" target="_blank">Privacy Policy</a>
+                    <a href="{% url 'contact' %}" class="footer-link">Help</a>
+                <img src="{% static 'myapp/Payments.png' %}" alt="Payments" class="payment-logo">
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("menuToggle").addEventListener("click", function() {
+    var navMenu = document.getElementById("navMenu");
+    if (navMenu.style.display === "flex") {
+        navMenu.style.display = "none";
+    } else {
+        navMenu.style.display = "flex";
+    }
+});
+    </script>
+</body>
+</html>

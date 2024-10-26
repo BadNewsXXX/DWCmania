@@ -1,0 +1,864 @@
+/* Общие стили */
+body {
+    font-family: "Marcellus", serif; /* Основной шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    overflow-x: hidden;
+}
+.marcellus-regular {
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+}
+html {
+    scroll-behavior: smooth;
+}
+*{
+    box-sizing: border-box;
+} 
+/* Стили для заголовка */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: #010407;
+    color: white;
+    z-index: 1;
+    height: 60px;
+}
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-list li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-list a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для основного содержимого */
+.main-content {
+    padding: 60px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.introduction, .features {
+    margin-bottom: 20px;
+}
+
+
+.navigation{
+    display: flex;
+
+}
+.left-menu, .right-menu{
+    flex:1;
+
+}
+.left-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right-menu li{
+    font-size: 18px;
+    padding: 10px;
+}
+.left-menu li{
+    font-size: 18px;
+    padding: 10px;
+
+}
+.top-list {
+    display: flex;
+    list-style: none; /* Убираем маркеры списка */
+    
+    padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем внешние отступы */
+}
+.top-list li{
+    margin: 0 15px;
+}
+.top-list li a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #f3efef; /* Цвет текста */
+    text-decoration: none;
+    font-weight: bold; /* Сделать текст жирнее */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.top-list li a:hover {
+    color: #be0505; /* Цвет при наведении */
+}
+img{
+    padding: 5px; /* Добавьте немного отступа между изображением и обводкой */
+    border-radius: 5px; /* Края будут закруглены */
+    max-width: 65px;
+    height: auto;  
+}
+.footer-right img{
+    max-width: 15%;
+}
+/* Анимация перелистывания */
+@keyframes diagonalFlipLogo {
+    0% {
+      transform: rotate3d(1, 1, 0, 0deg); /* Начальная позиция */
+    }
+    50% {
+      transform: rotate3d(1, 1, 0, 180deg); /* Половина переворота по диагонали */
+    }
+    100% {
+      transform: rotate3d(1, 1, 0, 360deg); /* Возврат в исходную позицию */
+    }
+  }
+@keyframes diagonalFlipLogoCounterClockwise {
+    0% {
+      transform: rotate3d(1, 1, 0, 0deg); /* Начальная позиция */
+    }
+    50% {
+      transform: rotate3d(1, 1, 0, -180deg); /* Половина переворота */
+    }
+    100% {
+      transform: rotate3d(1, 1, 0, -360deg); /* Полный переворот */
+    }
+  }
+/* Логотип по умолчанию */
+.logo img {
+    transition: transform 0.5s ease;
+    /* Применение диагональной анимации */
+    animation: diagonalFlipLogo 10s ease-in-out infinite; /* Время анимации 10 секунд, плавное начало и завершение */
+    animation-fill-mode: forwards; /* Оставляем логотип в исходной позиции после завершения */
+    transform-style: preserve-3d; /* Для корректного 3D-вращения */
+}
+
+/* Вращение логотипа по нажатию */
+.logo img.spin {
+    animation: spin 5s linear infinite;
+}
+
+.main-content .introduction{
+    text-align: center;
+}
+.introduction h2 {
+    margin-bottom: 10px;
+    margin-top: 50px;
+    font-size: 50px;
+    color: #f0f0f0;
+  }
+  
+.introduction p {
+    margin-top: 0;
+    color: #f0f0f0;
+    font-size: 45px;
+  }
+.DWC{
+    color: #be0505;
+}
+.hover-color {
+    color: #010407; /* Цвет при наведении на кнопку */
+}
+.page-start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+}
+.scroll-button {
+    background-color: #be0505; /* Цвет фона кнопки */
+    color: #010407; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    padding: 15px 100px; /* Внутренние отступы */
+    text-align: center; /* Центрируем текст */
+    text-decoration: none; /* Убираем подчеркивание */
+    display: inline-block; /* Для правильного отображения */
+    font-size: 30px; /* Размер шрифта */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход */
+    border-radius: 5px;
+}
+.main-content{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(10,1,1,1) 59%, rgba(2,0,36,1) 100%);
+}
+.features{
+    display: flex; /* Используем Flexbox */
+    justify-content: space-between; /* Размещаем элементы по краям */
+    align-items: center;
+    color: #ffffff;
+    margin-left: 50px;
+    margin-top: 180px;
+    
+
+}
+.features h2{
+    color: #ffffff;
+    font-size: 100px;
+    
+}
+.features span{
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    
+}
+.features .title{
+    font-size: 60px;
+}
+.features .opisanie{
+    display: flex;
+    
+}
+.features .title, .features .opisanie, .features h2 {
+    max-width: 60%; /* Ограничиваем ширину текста до половины */
+    margin-bottom: 70px;
+}
+.features video {
+    max-width: 40%; /* Ограничиваем ширину видео */
+    border: 10px solid #333; /* Границы как "телевизор" */
+    border-radius: 10px; /* Округляем углы */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Тень для эффекта */
+}  
+.features .content2{
+    display: flex;
+} 
+.sticker img {
+    width: 60px; /* Измените размер на меньшее значение */
+    height: auto;
+    margin-left: 10px; /* Отступ от текста */
+    vertical-align: middle; /* Центрирование по вертикали */
+}
+.Offers h2{
+    text-align: center;
+    font-weight: bold;
+    color: #be0505;
+    font-size: 60px;
+    padding-top: 60px;
+}
+.Offers span{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Offers .offer1 .offer2 .offer3{
+    display: flex;
+}
+.Offers .OffersAll{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start
+}
+.OffersAll .title{
+    display: flex;
+    justify-content: center;
+    color: #be0505;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+
+}
+.OffersAll > div {
+    flex-grow: 1;
+    flex-basis: 0; /* Ensures that they start with zero basis and grow equally */
+    margin: 0 10px; /* Adds some space between elements */
+     /* Optional: Just to see the separation of elements */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.OffersAll .title{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.OffersAll .opisanie{
+    text-align: center;
+    word-wrap: break-word; /* Разбивает длинные слова */
+    word-break: break-word; /* Переносит слова, чтобы не выталкивать другие элементы */
+    overflow-wrap: break-word; /* Работает аналогично word-wrap */
+    white-space: normal; /* Позволяет тексту переноситься на новые строки */
+    color: #ffffff;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+.text-content .ending{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+.ending .white{
+    font-size: 20px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+.ending span{
+    margin: 15px;
+}
+.scroll-button:hover{
+    border-color: #ff6b6b; /* Цвет границы при наведении */
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.8); /* Свечение вокруг кнопки */
+}
+.button2 .scroll-button{
+    margin-bottom: 50px;
+}
+.offer1 img{
+    max-width: 450px;
+    margin-top: 100px;
+}
+.offer2 img{
+    max-width: 95%;
+    margin-top: 100px;
+}
+.offer3 img{
+    max-width: 400px;
+    margin-top: 50px;
+}
+.pricing h2{
+    display: flex;
+    justify-content: center;
+    color: #f0f0f0;
+}
+.pricing .DWC{
+    padding-inline: 20px;
+}
+
+
+
+/* Section Styles */
+.pricing-section {
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 50px 0;
+}
+
+.pricing-title {
+    font-size: 3.3rem;
+    margin-bottom: 40px;
+    margin-top: 100px;
+    
+}
+
+/* Pricing Container */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual Plan */
+.pricing-plan {
+    background-color: #010407; /* Slightly lighter background for contrast */
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-plan:hover {
+    transform: scale(1.05); /* Scale on hover */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+}
+
+/* Plan Title */
+.plan-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #f44;
+}
+
+/* Plan Price */
+.plan-price {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.plan-price .currency {
+    font-size: 1.5rem;
+    vertical-align: super;
+}
+
+/* Plan Features */
+.plan-features {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+.plan-features li {
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
+.plan-features li:last-child {
+    border-bottom: none;
+}
+
+/* Button */
+.plan-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #f44;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.plan-button:hover {
+    background-color: #ff6666;
+}
+.original-price {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #ccc;
+    display: flex;
+    justify-content: right;
+}
+
+.original-price del {
+    color: #f44; /* Зачёркнутая цена */
+}
+
+.discount {
+    color: #4caf50; /* Цвет текста для скидки */
+    font-weight: bold;
+    margin-left: 10px;
+}
+#invis{
+    visibility: hidden;
+}
+
+
+/* Основной стиль футера */
+.footer {
+    background-color: #010407;
+    color: white;
+    padding: 30px 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Контейнер футера, занимающий 100% */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin-left: 20px;
+}
+
+/* Левый блок футера */
+.footer-left {
+    flex: 1;
+    text-align: left;
+}
+.footer-left span{
+    color:#8a8a8d;
+}
+/* Центральные ссылки */
+.footer-center {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+.footer-link:hover {
+    color: #be0505;
+}
+
+/* Правый блок с платёжными системами */
+.footer-right {
+    flex: 1;
+    text-align: right;
+    margin-right: 20px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.payment-logo {
+    box-shadow: none;
+}
+
+
+
+
+
+.main-content .main-content-about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 710px;
+    
+}
+.main-content .main-content-about p{
+    color: #f0f0f0;
+}
+.main-content .main-content-about h1{
+    color: #be0505;
+}
+.main-content .main-content-about .DWCabout{
+    color: #be0505;
+    font-weight: bold;
+}
+.main-content .main-content-about a{
+    color: #be0505;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+
+.main-content_termsNpolicy {
+    padding: 60px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.main-content_termsNpolicy .text-about{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    width: 50%; /* Ширина блока в процентах от родительского контейнера */
+    margin: 0 auto; /* Центрируем блок по горизонтали */
+}
+.main-content_termsNpolicy .text-about h1{
+    font-size: 60px;
+    margin-top: 40px;
+    margin-bottom: auto;
+    color: #010407;
+}
+.main-content_termsNpolicy .text-about span{
+    font-size: 40px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    color: #010407;
+}
+.main-content_termsNpolicy .text-about p{
+    font-size: 18px;
+    line-height: 28px;
+    color: #010407;
+    
+}
+.main-content_termsNpolicy .text-about .effective{
+    margin-bottom: 7em;
+}
+.main-content_termsNpolicy .text-about li{
+    font-size: 17px;
+    color: #010407;
+    margin: 10px;
+}
+.main-content_termsNpolicy .text-about .bold span{
+    font-size: 18px;
+    font-weight: bold;
+}
+.main-content_termsNpolicy .text-about .bold li{
+    padding: 10px;
+}
+#accept-button{
+    border: none;
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #f44;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    
+}
+#accept-button:hover{
+    background-color: #ff6666;
+}
+#decline-button{
+    border: none;
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #f44;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+#decline-button:hover{
+    background-color: #ff6666;
+}
+#cookie-banner {
+    position: fixed; /* Фиксированное положение */
+    right: 0;
+    background-color: white; /* Цвет фона */
+    border: 1px solid #ccc; /* Рамка */
+    padding: 10px; /* Отступы внутри баннера */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+
+
+.menu-toggle {
+    display: none; /* Скрываем кнопку на больших экранах */
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#navMenu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 1170px), (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Показываем кнопку гамбургер-меню */
+    }
+    .left-menu{
+        display: flex;
+        justify-content: left;
+    }
+    #navMenu {
+        display: none; /* Скрываем меню */
+        flex-direction: column; /* Меню будет вертикальным */
+        background-color: #010407;
+        padding-top: 350px;
+    }
+    #navMenu li {
+        text-align: center;
+        padding: 10px;
+
+    }
+    #navMenu li a {
+        display: block;
+        padding: 10px 0;
+        text-decoration: none;
+        color: #be0505;
+        font-size: 19px;
+        
+    }
+    #navMenu li a:hover {
+        background-color: #333;
+    }
+    .page-start {
+        height: auto; /* Убираем фиксированную высоту */
+        width: auto;
+        padding: 20px;
+    }
+
+    .introduction h2 {
+        font-size: 30px; /* Уменьшаем размер заголовка */
+    }
+
+    .introduction p {
+        font-size: 18px; /* Уменьшаем размер текста */
+    }
+
+    .scroll-button {
+        font-size: 20px; /* Уменьшаем кнопку */
+        padding: 10px 40px;
+    }
+    .right-menu .top-list li a{
+        visibility: hidden;
+    }
+
+    .introduction h2 {
+    font-size: 30px;
+  }
+
+  .introduction p {
+    font-size: 20px;
+  }
+
+  .scroll-button {
+    padding: 10px 50px;
+    font-size: 20px;
+  }
+
+  .features {
+    flex-direction: column; /* Размещаем блоки вертикально */
+    margin-top: 50px;
+    margin-left: 0;
+  }
+
+  .features h2 {
+    font-size: 50px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .features .title {
+    font-size: 30px;
+    max-width: 100%; /* Убираем ограничения ширины */
+    display: flex;
+    justify-content: center;
+  }
+
+  .features .opisanie {
+    font-size: 18px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .features video {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+
+  .sticker img {
+    width: 40px;
+  }
+
+  .main-content {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(10,1,1,1) 59%, rgba(2,0,36,1) 100%);
+  }
+
+  .Offers h2 {
+    font-size: 40px;
+    padding-top: 20px;
+  }
+
+  .OffersAll {
+    flex-direction: column; /* Переводим элементы в вертикальное расположение */
+    align-items: center;
+  }
+
+  .OffersAll > div {
+    margin-bottom: 20px;
+  }
+
+  .OffersAll .title {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .OffersAll .opisanie {
+    font-size: 16px;
+  }
+
+  .Offers img {
+    max-width: 90%; /* Ограничиваем максимальную ширину изображения для мобильных устройств */
+    margin-top: 20px;
+  }
+
+  .scroll-button {
+    font-size: 18px;
+    padding: 8px 30px;
+    margin-bottom: 30px;
+  }
+
+  .ending .white {
+    font-size: 18px;
+  }
+
+
+  .pricing-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .pricing-container {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .pricing-plan {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .plan-title {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .plan-price {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .plan-button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+  }
+
+  .original-price {
+    justify-content: center; /* Центрируем цену со скидкой */
+    font-size: 0.9rem;
+  }
+
+
+  .footer-container {
+    flex-direction: column; /* Меняем расположение элементов на вертикальное */
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.footer-left, 
+.footer-right {
+    margin: 10px 0; /* Добавляем отступы между блоками */
+}
+.footer-left{
+    text-align: center;
+}
+.footer-right{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-link {
+    display: block; /* Размещаем ссылки по вертикали */
+    margin: 10px 0;
+}
+
+.payment-logo {
+    margin-top: 15px;
+    width: 80%; /* Уменьшаем размер логотипа платежных систем */
+    max-width: 200px; /* Ограничиваем максимальный размер */
+}
+}
+

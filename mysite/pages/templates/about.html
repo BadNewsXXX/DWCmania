@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>About Us</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="topmenu">
+                <nav class="navigation">
+                    <div class="left-menu">
+                        <div class="logo">
+                            <a href="{% url 'home' %}">
+                                <img src="{% static 'myapp/DWC-4.png' %}" alt="DWC Logo">
+                            </a>
+                        </div>
+                        <ul class="top-list">
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="/#features">Features</a></li>
+                            <li><a href="/#Product">Product</a></li>
+                            <li><a href="/#pricing">Pricing</a></li>
+                        </ul>    
+                    </div>
+                    <div class="right-menu">
+                        <ul class="top-list">
+                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </div>  
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="main-content-about">
+            <img src="{% static 'myapp/DWC-3.png' %}" alt="DWC Logo">
+            <h1>About Our Company</h1>
+            <div class="text-about">
+            <p>At <span class="DWCabout">DWC</span>, we redefine convenience. Our goal is simple: to deliver sports content in the most effortless and enjoyable way possible. Comfort is our priority. With us, you'll have the best sports content at your fingertips, ready to watch whenever and wherever you want. Say goodbye to endless searching—just sit back and enjoy.</p>
+            <p>No matter where you are in the world, your favorite content is always within reach. From any corner of the globe, in any time zone, you can tune in and catch up at your <span class="DWCabout">convenience</span>. <i> Anytime. Anywhere. </i></p>
+            <p>We believe in constant innovation and improvement. Our team is dedicated to refining our products, ensuring they evolve alongside the ever-changing needs of our <span class="DWCabout">community</span>.</p>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Левый блок с информацией -->
+            <div class="footer-left">
+                <p>© Copyright 2024 DWC LTD. All rights reserved.<br>
+                    <span>111 Kalinovskogo street, 220086, Minsk, Minsk region, Belarus</span></p>
+            </div>
+
+            <!-- Правый блок с платёжными системами -->
+            <div class="footer-right">
+                    <a href="{% url 'terms' %}" class="footer-link" target="_blank">Terms of Use</a>
+                    <a href="{% url 'privacy' %}" class="footer-link" target="_blank">Privacy Policy</a>
+                    <a href="{% url 'contact' %}" class="footer-link">Help</a>
+                <img src="{% static 'myapp/Payments.png' %}" alt="Payments" class="payment-logo">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
